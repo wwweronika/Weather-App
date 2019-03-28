@@ -6,11 +6,14 @@ html{
 body{
     margin: 0;
     font-family: 'Encode Sans Expanded', sans-serif;
-    /* background: linear-gradient(#6e9ffa, #ffffff); */
+    /* background: #6e9ffa;*/
+    background: url("trianglify.svg");
+    background-size: 2880px 3200px;
 }
-h1{
+h1, h2, h3{
     font-family: 'Courgette', cursive;
     margin: 0px;
+    color: white;
 }
 p {
     padding: 0;
@@ -19,19 +22,19 @@ p {
 
 
 
-/* ##### CLASSES ##### */
+/* ##### CLASSES and IDs - the welcome screen ##### */
 .container{
-    width: 65%;
+    width: 75%;
     margin: 100px auto;
 }
-.container p{
+#coders-camp {
     text-align: right;
 }
 
 .welcome{
     margin: 0 auto;
-    background: #bada55;
-    /* background: rgba(255, 255, 255, 0.5); */
+    /* background: #bada55; */
+    background: rgba(255, 255, 255, 0.3);
     text-align: center;
     height: 500px;
     padding-top: 1px;
@@ -40,7 +43,6 @@ p {
 .welcome h1{
     margin: 50px 0px;
     font-size: 5rem;
-    color: white;
     text-shadow:
   2px  2px 2px rgb(0, 0, 0),
   2px -2px 2px rgb(0, 0, 0),
@@ -112,10 +114,45 @@ p {
     outline: none;
 }
 
+/* ##### CLASSES and IDs - weather information for the current day ##### */
+#visible-or-not{
+    display: flex;
+}
+.weather {
+    background: #686868;
+    width: 35%;
+}
+.basic-weather {
+    background: #dadada;
+    text-align: center;
+}
+.basic-weather h2{
+    font-size: 2.2rem;
+    margin-bottom: 35px;
+    text-shadow:
+  1px  1px 1px rgb(0, 0, 0),
+  1px -1px 1px rgb(0, 0, 0),
+  -1px  1px 1px rgb(0, 0, 0),
+  -1px -1px 1px rgb(0, 0, 0);
+}
 
 
 
 
+/* SMALL SMALL SMALL */
+.three-days {
+    display: flex;
+    justify-content: space-between;
+    background: skyblue;
+    width: 65%;
+    height: 50px;
+}
+.weather-small {
+    width: 32%;
+
+}
+.weather-small h2{
+    font-size: 1.3rem;
+}
 
 
-/* ##### ID ##### */

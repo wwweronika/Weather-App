@@ -17,47 +17,54 @@
         <div class="welcome">
             <h1>Weather <i class="fas fa-cloud"></i> App</h1>
             <div class="search-bar">
-                <input type="text" name="searchWeather" placeholder="Find the city...">
+                <input id='my-city' type="text" name="searchWeather" placeholder="Find the city...">
                 <button><i class="fas fa-search"></i></button>
             </div>
         </div>
-        <p><em>by mangoteam for <strong>.Coders<span style="color:#FFC53D">Camp</strong></span></em></p>
+        <p id='coders-camp'><em>by mangoteam for <strong>.Coders<span style="color:#FFC53D">Camp</strong></span></em></p>
     </div>
     <!-- Main content -->
     <div class="container" id="visible-or-not">
         <div class="weather">
             <div class = "basic-weather">
-                <h3>Wroclaw, PL</h3>
-                <span id="icon">JAKIEŚ SŁONECZKO</span>
-                <strong><span id='temp'>17stC</span><i class="fa fa-thermometer-full" aria-hidden="true"></i></strong>
+                <h2>Wrocław</h2>
+                <span id="icon">
+                    <i class="fas fa-sun" style="font-size: 10em; color:#FFC53D;"></i>
+                </span></br>
+               <p><strong><span id='temp'>17stC</span><i class="fa fa-thermometer-full" aria-hidden="true"></i></strong></p>
             </div>
             <div class="advanced-weather">
-                <!-- w JS wystarczyło by napisać: $('#pressure').html('pressure: '+pressure+' [hPa]'); -->
-                <p><span id='pressure'></span></p>
-                <p><span id='humidity'></span></p>
-                <p><span id='wind'></span></p>
-                <p><span id='clouds'></span></p>
+                <!-- w JS wystarczyło by napisać np: $('#pressure').html('pressure: '+pressure+' [hPa]'); -->
+                <p><span id='pressure'>pressure: 1021 [hPa]</span></p>
+                <p><span id='humidity'>humidity: 77[%]</span></p>
+                <p><span id='wind'>wind: 11.3 [m/s]</span></p>
+                <p><span id='clouds'>clouds: 75 [%]</span></p>
             </div>
         </div>
+        <!-- The 3-days weather with chart box -->
+        <!-- Tutaj chyba trzeba będzie poiterować po API z .html() -->
         <div class="three-days">
-            <div class="weather" id="firstDay">
+            <div class="weather weather-small" id="firstDay">
                 <div class = "basic-weather">
+                    <h2>Monday</h2>
                             
                 </div>
                 <div class="advanced-weather">
             
                 </div>
             </div>
-            <div class="weather" id="secondDay">
+            <div class="weather weather-small" id="secondDay">
                 <div class = "basic-weather">
+                    <h2>Tuesday</h2>
                                 
                 </div>
                 <div class="advanced-weather">
                 
                 </div>
             </div>
-            <div class="weather" id="firstDay">
+            <div class="weather weather-small" id="thirdDay">
                 <div class = "basic-weather">
+                    <h2>Wednesday</h2>
                                 
                 </div>
                 <div class="advanced-weather">
