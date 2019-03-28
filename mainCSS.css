@@ -10,10 +10,28 @@ body{
     background: url("trianglify.svg");
     background-size: 2880px 3200px;
 }
-h1, h2, h3{
+h1, h2{
     font-family: 'Courgette', cursive;
     margin: 0px;
     color: white;
+}
+h3{
+    /* color:rgb(163, 206, 255); */
+    color: white;
+    text-shadow:
+  5px  5px 10px rgb(0, 0, 0);
+    margin-top: 40px;
+    font-size: 3.5rem;
+}
+h4{
+    margin-left: 5%;
+    font-size: 1.2rem;
+    color: white;
+    text-shadow:
+  1px  1px 1px rgb(0, 0, 0),
+  1px -1px 1px rgb(0, 0, 0),
+  -1px  1px 1px rgb(0, 0, 0),
+  -1px -1px 1px rgb(0, 0, 0);
 }
 p {
     padding: 0;
@@ -33,7 +51,6 @@ p {
 
 .welcome{
     margin: 0 auto;
-    /* background: #bada55; */
     background: rgba(255, 255, 255, 0.3);
     text-align: center;
     height: 500px;
@@ -116,14 +133,15 @@ p {
 
 /* ##### CLASSES and IDs - weather information for the current day ##### */
 #visible-or-not{
-    display: flex;
+    display: flex; /* or display:none;*/
 }
 .weather {
-    background: #686868;
+    /* background: #686868; */
+    background: rgba(255, 255, 255, 0.3);
     width: 35%;
 }
 .basic-weather {
-    background: #dadada;
+    /* background: #dadada; */
     text-align: center;
 }
 .basic-weather h2{
@@ -142,7 +160,7 @@ p {
 /* SMALL SMALL SMALL */
 .three-days {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background: skyblue;
     width: 65%;
     height: 50px;
@@ -156,3 +174,14 @@ p {
 }
 
 
+/* FOOTER */
+footer {
+    width: 100%;
+    background-color: rgba(52, 58, 64, 0.7);
+    color: white;
+    text-align: center;
+    padding: 1% 0;
+}
+footer p {
+    margin-bottom: 0;
+}
