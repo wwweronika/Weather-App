@@ -6,7 +6,6 @@ html{
 body{
     margin: 0;
     font-family: 'Encode Sans Expanded', sans-serif;
-    /* background: #6e9ffa;*/
     background: url("trianglify.svg");
     background-size: 2880px 3200px;
 }
@@ -16,7 +15,6 @@ h1, h2{
     color: white;
 }
 h3{
-    /* color:rgb(163, 206, 255); */
     color: white;
     text-shadow:
   5px  5px 10px rgb(0, 0, 0);
@@ -134,14 +132,13 @@ p {
 /* ##### CLASSES and IDs - weather information for the current day ##### */
 #visible-or-not{
     display: flex; /* or display:none;*/
+    flex-wrap: wrap;
 }
 .weather {
-    /* background: #686868; */
     background: rgba(255, 255, 255, 0.3);
     width: 35%;
-}
+}   
 .basic-weather {
-    /* background: #dadada; */
     text-align: center;
 }
 .basic-weather h2{
@@ -157,22 +154,34 @@ p {
 
 
 
-/* SMALL SMALL SMALL */
+/* ##### CLASSES and IDs - weather information for the next 3 days ##### */
 .three-days {
     display: flex;
     justify-content: space-evenly;
-    background: skyblue;
     width: 65%;
     height: 50px;
 }
 .weather-small {
     width: 32%;
-
+    height: 370px;;
+    background: rgba(255, 255, 255, 0.3);
 }
 .weather-small h2{
     font-size: 1.3rem;
 }
+.weather-small h3{
+    font-size: 1.8rem;
+}
+.weather-small h4{
+    font-size: 0.8rem;
+    text-align: center;
+}
 
+/* chart-box */
+.chart-box{
+
+    background:#BADA55;
+}
 
 /* FOOTER */
 footer {
