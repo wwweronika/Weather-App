@@ -35,9 +35,6 @@ p {
     padding: 0;
     margin: 0;
 }
-
-
-
 /* ##### CLASSES and IDs - the welcome screen ##### */
 .container{
     width: 75%;
@@ -46,7 +43,6 @@ p {
 #coders-camp {
     text-align: right;
 }
-
 .welcome{
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.3);
@@ -128,43 +124,48 @@ p {
     cursor: pointer;
     outline: none;
 }
-
 /* ##### CLASSES and IDs - weather information for the current day ##### */
 #visible-or-not{
-    display: flex; /* display: flex; or display:none; */
+    display: flex; /* display:flex; or display:none; */
     flex-wrap: wrap;
 }
 .weather {
     background: rgba(255, 255, 255, 0.3);
     width: 35%;
+    text-align: center;
 }   
 .basic-weather {
     text-align: center;
 }
 .basic-weather h2{
     font-size: 2.2rem;
-    margin-bottom: 35px;
+    margin-bottom: 5%;
+    margin-top: 5%;
     text-shadow:
   1px  1px 1px rgb(0, 0, 0),
   1px -1px 1px rgb(0, 0, 0),
   -1px  1px 1px rgb(0, 0, 0),
   -1px -1px 1px rgb(0, 0, 0);
 }
-
-
+.basic-weather h3{
+    margin: 5% 0% 20% 0%;
+    cursor: pointer;
+}
+.advanced-weather h4{
+    margin: 5%;
+}
 /* ##### CLASSES and IDs - weather information for the next 3 days ##### */
 .additional-info{
-    /* background: magenta; */
-    width: 65%;
+    width: 60%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
 }
 .three-days{
-    /* background: #bada55; */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 .next-day{
-    /* background: lightblue; */
     background: rgba(255, 255, 255, 0.3);
     width: 30%;
 }
@@ -173,26 +174,28 @@ p {
 }
 .next-day-basic-info h2{
     margin-bottom: 5%;
-    padding-top: 5%;
+    margin-top: 5%;
+    text-shadow:
+  1px  1px 1px rgb(0, 0, 0),
+  1px -1px 1px rgb(0, 0, 0),
+  -1px  1px 1px rgb(0, 0, 0),
+  -1px -1px 1px rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 .next-day-basic-info h3{
     margin: 5% 0% 25% 0%;
     font-size: 1.8rem;
-
 }
 .next-day-advanced-info h4{
     margin: 5%;
     text-align: center;
-    font-size: 1rem;
+    font-size: .8rem;
 }
-
 .chart-box{
-    /* background-color: magenta; */
+    text-align: justify;
+    padding-top: 2.5%;
 }
-
-
-
-/* FOOTER */
+/* ##### FOOTER ##### */
 footer {
     width: 100%;
     background-color: rgba(52, 58, 64, 0.7);

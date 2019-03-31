@@ -1,0 +1,89 @@
+/* ##### Responsive Web Design ##### */
+/* ------------------------------------------------------------ 1060px */
+@media screen and (max-width: 1060px) {
+/* current day */
+    .basic-weather h2{
+        font-size: 1.8rem;
+    }
+    .basic-weather h3{
+        font-size: 2.5rem;
+    }
+    .advanced-weather h4{
+        font-size: 1rem;
+    }
+/* 3days weather */
+    .next-day-basic-info h2{
+        font-size: .9rem;
+    }
+    .next-day-basic-info h3{
+        font-size: 1.5rem;
+    }
+    .next-day-advanced-info h4{
+        font-size: .7rem;
+    }
+  }
+/* ------------------------------------------------------------ 930px */
+@media screen and (max-width: 930px){
+    .welcome h1{
+        font-size: 4rem;
+    }
+    button i{
+        font-size: 1.2rem;
+    }
+    #visible-or-not{
+        flex-direction: column;
+    }
+/* current day */
+    .weather{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .basic-weather{
+        width: 45%;
+    }
+    .advanced-weather{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 55%;
+    }
+    .advanced-weather h4{
+        align-items: center;
+        font-size: 1.2rem;
+    }
+    .additional-info{
+        padding: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
+    }
+/* 3days weather */
+    .three-days{
+        width: 100%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+  }
+  /* ------------------------------------------------------------ 660px */
+@media screen and (max-width: 660px){
+    .welcome h1{
+        font-size: 2.1rem;
+    }
+
+
+
+
+
+    footer p{
+        font-size: .8rem;
+    }
+}
+/* ------------------------------------------------------------ 320px */
+@media screen and (max-width: 320px){
+    body{
+        color: green;
+    }
+}
