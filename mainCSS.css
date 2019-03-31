@@ -131,7 +131,7 @@ p {
 
 /* ##### CLASSES and IDs - weather information for the current day ##### */
 #visible-or-not{
-    display: flex; /* or display:none;*/
+    display: flex; /* display: flex; or display:none; */
     flex-wrap: wrap;
 }
 .weather {
@@ -152,36 +152,45 @@ p {
 }
 
 
-
-
 /* ##### CLASSES and IDs - weather information for the next 3 days ##### */
-.three-days {
-    display: flex;
-    justify-content: space-evenly;
+.additional-info{
+    /* background: magenta; */
     width: 65%;
-    height: 50px;
 }
-.weather-small {
-    width: 32%;
-    height: 370px;;
+.three-days{
+    /* background: #bada55; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.next-day{
+    /* background: lightblue; */
     background: rgba(255, 255, 255, 0.3);
+    width: 30%;
 }
-.weather-small h2{
-    font-size: 1.3rem;
-}
-.weather-small h3{
-    font-size: 1.8rem;
-}
-.weather-small h4{
-    font-size: 0.8rem;
+.next-day-basic-info{
     text-align: center;
 }
-
-/* chart-box */
-.chart-box{
-
-    background:#BADA55;
+.next-day-basic-info h2{
+    margin-bottom: 5%;
+    padding-top: 5%;
 }
+.next-day-basic-info h3{
+    margin: 5% 0% 25% 0%;
+    font-size: 1.8rem;
+
+}
+.next-day-advanced-info h4{
+    margin: 5%;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.chart-box{
+    /* background-color: magenta; */
+}
+
+
 
 /* FOOTER */
 footer {

@@ -23,13 +23,13 @@
         </div>
         <p id='coders-camp'><em>by mangoteam for <strong>.Coders<span style="color:#FFC53D">Camp</strong></span></em></p>
     </div>
-    <!-- Main content -->
     <div class="container" id="visible-or-not">
+        <!-- The current day -->
         <div class="weather">
             <div class = "basic-weather">
                 <h2>Wrocław</h2>
                 <span id="icon">
-                    <i class="fas fa-sun" style="font-size: 10em; color:#FFC53D;"></i>
+                    <i class="fas fa-sun" style="font-size: 10em;"></i>
                 </span></br>
                <h3><strong><span id='temp'>17</span>&#176C <i class="fa fa-thermometer-full" aria-hidden="true"></i></strong></h3>
             </div>
@@ -42,58 +42,71 @@
             </div>
         </div>
         <!-- The 3-days weather with chart box -->
-        <!-- Tutaj chyba trzeba będzie poiterować po API z .html() -->
-        <div class="three-days">
-            <div class="weather-small">
-                <div class = "basic-weather">
-                    <h2>Monday</h2>
-                    <span id="icon">
-                        <i class="fas fa-sun" style="font-size: 4.5em; color: #FFC53D;"></i>
-                    </span></br>
-                   <h3><strong><span id='temp'>21</span>&#176C <i class="fa fa-thermometer-full" aria-hidden="true"></i></strong></h3>        
+        <!-- ##### Tutaj chyba trzeba będzie poiterować po API z .html() ##### -->
+        <div class="additional-info">
+            <div class="three-days">
+                <!-- The 1st next day -->
+                <div class="next-day">
+                    <div class="next-day-basic-info">
+                        <h2>Monday</h2>
+                        <span id="icon">
+                            <i class="fas fa-sun" style="font-size: 4.5em;"></i>
+                        </span>
+                        <h3>
+                            <strong><span id='temp'>21</span>&#176C <i class="fa fa-thermometer-full" aria-hidden="true"></i></strong>
+                        </h3>
+                    </div>
+                    <div class="next-day-advanced-info">
+                        <h4>pressure: <span id='pressure'>1021</span> [hPa]</h4>
+                        <h4>humidity: <span id='humidity'>77</span> [%]</p>
+                        <h4>wind: <span id='wind'>11.3</span> [m/s]</h4>
+                        <h4>clouds: <span id='clouds'>75</span> [%]</h4>
+                    </div>
                 </div>
-                <div class="advanced-weather">
-                    <h4>pressure: <span id='pressure'>1021</span> [hPa]</h4>
-                    <h4>humidity: <span id='humidity'>77</span> [%]</p>
-                    <h4>wind: <span id='wind'>11.3</span> [m/s]</h4>
-                    <h4>clouds: <span id='clouds'>75</span> [%]</h4>
+                <!-- The 2nd next day -->
+                <div class="next-day">
+                    <div class="next-day-basic-info">
+                        <h2>Tuesday</h2>
+                        <span id="icon">
+                            <i class="fas fa-sun" style="font-size: 4.5em;"></i>
+                        </span>
+                        <h3>
+                            <strong><span id='temp'>25</span>&#176C <i class="fa fa-thermometer-full" aria-hidden="true"></i></strong>
+                        </h3>
+                    </div>
+                    <div class="next-day-advanced-info">
+                        <h4>pressure: <span id='pressure'>1021</span> [hPa]</h4>
+                        <h4>humidity: <span id='humidity'>77</span> [%]</p>
+                        <h4>wind: <span id='wind'>11.3</span> [m/s]</h4>
+                        <h4>clouds: <span id='clouds'>75</span> [%]</h4>
+                    </div>
+                </div>
+                <!-- The 3rd next day -->
+                <div class="next-day">
+                    <div class="next-day-basic-info">
+                        <h2>Wednesday</h2>
+                        <span id="icon">
+                            <i class="fas fa-sun" style="font-size: 4.5em;"></i>
+                        </span>
+                        <h3>
+                            <strong><span id='temp'>29</span>&#176C <i class="fa fa-thermometer-full" aria-hidden="true"></i></strong>
+                        </h3>
+                    </div>
+                    <div class="next-day-advanced-info">
+                        <h4>pressure: <span id='pressure'>1021</span> [hPa]</h4>
+                        <h4>humidity: <span id='humidity'>77</span> [%]</p>
+                        <h4>wind: <span id='wind'>11.3</span> [m/s]</h4>
+                        <h4>clouds: <span id='clouds'>75</span> [%]</h4>
+                    </div>
                 </div>
             </div>
-            <div class="weather-small" id="secondDay">
-                <div class = "basic-weather">
-                    <h2>Tuesday</h2>
-                    <span id="icon">
-                        <i class="fas fa-sun" style="font-size: 4.5em; color: #FFC53D;"></i>
-                    </span></br>
-                    <h3><strong><span id='temp'>25</span>&#176C <i class="fa fa-thermometer-full" aria-hidden="true"></i></strong></h3>           
-                </div>
-                <div class="advanced-weather">
-                    <h4>pressure: <span id='pressure'>1021</span> [hPa]</h4>
-                    <h4>humidity: <span id='humidity'>77</span> [%]</p>
-                    <h4>wind: <span id='wind'>11.3</span> [m/s]</h4>
-                    <h4>clouds: <span id='clouds'>75</span> [%]</h4>
-                </div>
-            </div>
-            <div class="weather-small" id="thirdDay">
-                <div class = "basic-weather">
-                    <h2>Wednesday</h2>
-                    <span id="icon">
-                        <i class="fas fa-sun" style="font-size: 4.5em; color: #FFC53D;"></i>
-                    </span></br>
-                    <h3><strong><span id='temp'>27</span>&#176C <i class="fa fa-thermometer-full" aria-hidden="true"></i></strong></h3>         
-                </div>
-                <div class="advanced-weather">
-                    <h4>pressure: <span id='pressure'>1021</span> [hPa]</h4>
-                    <h4>humidity: <span id='humidity'>77</span> [%]</p>
-                    <h4>wind: <span id='wind'>11.3</span> [m/s]</h4>
-                    <h4>clouds: <span id='clouds'>75</span> [%]</h4>
-                </div>
+            <div class="chart-box" style="justify-content: space-evenly; width: 100%;">
+                Wygenerowany wykres
             </div>
         </div>
-        <div class="chart-box">
-            <p>SPACE FOR GENERATED CHART. This div should be under the 3-day divs</p>
 
-        </div>
+
+            
     </div>
     <footer>
         <p>This weather-app was made with
