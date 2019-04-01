@@ -27,8 +27,17 @@
     .welcome h1{
         font-size: 4rem;
     }
-    button i{
-        font-size: 1.2rem;
+    .search-bar input{
+        font-size: 1rem;
+        width: 60%;
+    }
+    .search-bar input:focus{
+        width: 70%;
+    }
+    .search-bar button{
+        width: 10%;
+        height: 40px;
+        font-size: 1rem;
     }
     #visible-or-not{
         flex-direction: column;
@@ -70,20 +79,51 @@
   /* ------------------------------------------------------------ 660px */
 @media screen and (max-width: 660px){
     .welcome h1{
-        font-size: 2.1rem;
+        font-size: 3rem;
     }
-
-
-
-
-
+    .search-bar input{
+        font-size: 1rem;
+        width: 60%;
+    }
+    .search-bar input:focus{
+        width: 70%;
+    }
+    .search-bar button{
+        width: 10%;
+        height: 40px;
+        font-size: 1rem;
+    }
     footer p{
         font-size: .8rem;
     }
-}
-/* ------------------------------------------------------------ 320px */
-@media screen and (max-width: 320px){
-    body{
-        color: green;
+/* ------------------------------------------------------------ 530px */
+@media screen and (max-width: 530px){
+    .welcome h1{
+        font-size: 3.2rem;
+    }
+    .search-bar button{
+        width: 20%;
+        height: 40px;
+        font-size: 1rem;
+    }
+    /* current day */
+    .weather{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .basic-weather, .advanced-weather, .next-day{
+        width: 100%;
+    }
+    .next-day{
+        margin-bottom: 10%;
+    }
+    .three-days{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .chart-box{
+        display: none;
     }
 }
