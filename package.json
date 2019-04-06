@@ -1,0 +1,23 @@
+{
+  "name": "weather-forecast",
+  "version": "0.1.0",
+  "description": "using OpenWeatherMap API to retrieve data about weather forecast for next three days",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "weather",
+    "forecast",
+    "openweathermap"
+  ],
+  "author": "Kamil Nawrot (#mangoteam)",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "css-loader": "^2.1.1",
+    "style-loader": "^0.23.1"
+  }
+}
