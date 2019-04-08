@@ -218,3 +218,6 @@ footer {
 footer p {
     margin-bottom: 0;
 }
+i.fas.fa-heart{
+    text-shadow: none;
+}
