@@ -124,10 +124,22 @@ p {
     cursor: pointer;
     outline: none;
 }
+i.fas.fa-search{
+    color:white;
+    text-shadow: none;
+}
 /* ##### CLASSES and IDs - weather information for the current day ##### */
 #visible-or-not{
     display: flex; /* display:flex; or display:none; */
     flex-wrap: wrap;
+}
+i.fas{
+    color: rgb(255, 255, 220);
+    text-shadow:
+  1px  1px 1px rgb(0, 0, 0),
+  1px -1px 1px rgb(0, 0, 0),
+  -1px  1px 1px rgb(0, 0, 0),
+  -1px -1px 1px rgb(0, 0, 0);
 }
 .weather {
     background: rgba(255, 255, 255, 0.3);
