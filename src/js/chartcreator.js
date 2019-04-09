@@ -1,6 +1,9 @@
-async function drawCharts(tempFormat, tempName) {
+//import Chart from 'chart.js';
+const Chart = require('chart.js');
+
+async function drawCharts(parsedData, tempFormat, tempName) {
     let data = {
-        labels: date,
+        labels: parsedData.date,
         datasets: [{
                 label: `Temperature ${tempName}`,
                 // line properties
@@ -37,7 +40,7 @@ async function drawCharts(tempFormat, tempName) {
                 pointHoverBorderWidth: 3,
                 pointHoverBackgroundColor: 'rgba(255, 255, 255, 1)',
                 pointHoverBorderColor: 'rgba(132, 177, 237, 1)',
-                data: humidity,
+                data: parsedData.humidity,
                 yAxisID: "yPercent",
                 type: 'line'
             },
@@ -55,7 +58,7 @@ async function drawCharts(tempFormat, tempName) {
                 pointHoverBorderWidth: 3,
                 pointHoverBackgroundColor: 'rgba(255, 255, 255, 1)',
                 pointHoverBorderColor: 'rgba(75,192,192, 1)',
-                data: pressure,
+                data: parsedData.pressure,
                 type: 'line',
                 yAxisID: 'yPressure'
             },
@@ -73,7 +76,7 @@ async function drawCharts(tempFormat, tempName) {
                 pointHoverBorderWidth: 3,
                 pointHoverBackgroundColor: 'rgba(255, 255, 255, 1)',
                 pointHoverBorderColor: 'rgba(188, 136, 66, 1)',
-                data: wind,
+                data: parsedData.wind,
                 type: 'line',
                 yAxisID: 'yWind'
             },
@@ -92,7 +95,7 @@ async function drawCharts(tempFormat, tempName) {
                 pointHoverBorderWidth: 3,
                 pointHoverBackgroundColor: 'rgba(255, 255, 255, 1)',
                 pointHoverBorderColor: 'rgba(170,170,170,0.5)',
-                data: clouds,
+                data: parsedData.clouds,
                 yAxisID: 'yPercent'
             },
             {
@@ -110,12 +113,12 @@ async function drawCharts(tempFormat, tempName) {
                 pointHoverBorderWidth: 3,
                 pointHoverBackgroundColor: 'rgba(255, 255, 255, 1)',
                 pointHoverBorderColor: 'rgba(92, 139, 188, 0.5)',
-                data: rain,
+                data: parsedData.rain,
                 yAxisID: 'yRain'
             }
         ]
     };
-    console.log(data.datasets);
+    //console.log(data.datasets);
 
     let options = {
         animation: {
@@ -123,7 +126,7 @@ async function drawCharts(tempFormat, tempName) {
             duration: 700
         },
         responsive: true,
-        maintainAspectRatio: true,
+        //maintainAspectRatio: true,
         legend: {
             position: 'bottom',
             display: true
@@ -212,8 +215,8 @@ async function drawCharts(tempFormat, tempName) {
                     },
                     ticks: {
                         fontSize: 10,
-                        min: Math.floor(Math.min.apply(this, pressure) - 3),
-                        max: Math.ceil(Math.max.apply(this, pressure) + 3),
+                        min: Math.floor(Math.min.apply(this, parsedData.pressure) - 3),
+                        max: Math.ceil(Math.max.apply(this, parsedData.pressure) + 3),
                     },
                     id: 'yPressure'
                 },
@@ -231,8 +234,8 @@ async function drawCharts(tempFormat, tempName) {
                     },
                     ticks: {
                         fontSize: 10,
-                        min: Math.floor(Math.min.apply(this, wind) - 3),
-                        max: Math.ceil(Math.max.apply(this, wind) + 3),
+                        min: Math.floor(Math.min.apply(this, parsedData.wind) - 3),
+                        max: Math.ceil(Math.max.apply(this, parsedData.wind) + 3),
                     },
                     id: 'yWind'
                 },
@@ -251,7 +254,7 @@ async function drawCharts(tempFormat, tempName) {
                     ticks: {
                         fontSize: 10,
                         min: 0,
-                        max: Math.ceil(Math.max.apply(this, rain) + 1),
+                        max: Math.ceil(Math.max.apply(this, parsedData.rain) + 1),
                     },
                     id: 'yRain'
                 }
@@ -264,16 +267,26 @@ async function drawCharts(tempFormat, tempName) {
         }
 
     };
-    if (typeof myLineChart != 'undefined') {
-        myLineChart.destroy();
+    
+    //console.log(options);
+
+    /* if (typeof myLineChart != 'undefined') {
+        console.log(myLineChart);
+        //myLineChart.destroy();
+        myLineChart = null;
         console.log('destroyed');
-    }
-    let ctx = document.getElementById("chart-box").getContext("2d");
+        console.log(myLineChart);
+    } */
+    
+    const ctx = document.getElementById("chart-box").getContext("2d");
     myLineChart = new Chart(ctx, {
         type: 'bar',
         data: data,
         options: options
     });
+    //console.log(myLineChart);
+
+    return myLineChart;
 }
 
 module.exports.drawCharts = drawCharts;

@@ -1,13 +1,15 @@
-const search = require('./search');
+//const search = require('./search');
 const fetch = require('node-fetch');
 
-const city = search.getCity();
+//const city = search.getCity();
 
-async function fetchData() {
-    console.log('test start');
+async function fetchData(cityInput) {
+    const city = cityInput;
+    console.log('fetch started');
     const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=c933a83cb569298458c0ad0176ec7f99`);
     const data = await response.json();
-    console.log('test finished');
+    console.log(data);
+    console.log('fetch finished');
     return data;
 }
 
@@ -85,8 +87,9 @@ function convertTemp(parsedData) {
     });
 }
 
-async function getData() {
-    const data =  await fetchData();
+async function getData(cityInput) {
+    const city = cityInput
+    const data =  await fetchData(city);
     const parsedData = await separateData(data);
     return parsedData;
 }

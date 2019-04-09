@@ -31,6 +31,8 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.4.3",
+    "chart.js": "^2.8.0",
     "node-fetch": "^2.3.0"
   }
 }
