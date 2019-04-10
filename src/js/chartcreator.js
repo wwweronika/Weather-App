@@ -126,7 +126,7 @@ async function drawCharts(parsedData, tempFormat, tempName) {
             duration: 700
         },
         responsive: true,
-        //maintainAspectRatio: true,
+        maintainAspectRatio: false,
         legend: {
             position: 'bottom',
             display: true
