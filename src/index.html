@@ -1,14 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Weather Forecast</title>
-    <script src="./dist/main.js"></script>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <!-- LINKED STUFF -->
+    <!-- <link rel="stylesheet" type="text/css" href="mainCSS.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="rwd.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded" rel="stylesheet">
+  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- <script src='./fetchingWeatherData.js'></script>
+    <script src='./searchbar.js'></script> -->
+
+    <title>Weather-App</title>
 </head>
+
 <body>
-    
+    <!-- welcome to our weatherApp -->
+    <div class="container">
+        <div class="welcome">
+            <h1>Weather <i class="fas fa-cloud"></i> App</h1>
+            <div class="search-bar">
+                <input id='my-city' type="text" name="searchWeather" placeholder="Find the city...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <p id='coders-camp'><em>by mangoteam for <strong>.Coders<span style="color:#FFC53D">Camp</strong></span></em>
+        </p>
+    </div>
+    <div class="container" id="visible-or-not">
+        <!-- The current day -->
+        <div class="weather">
+            <div class="basic-weather">
+                <h2>Wrocław</h2>
+
+                <span id="icon">
+                    <i class="fas fa-sun" style="font-size: 10em;"></i>
+                </span></br>
+                <h3><strong><span id='temp'>17</span>&#176C <i class="fa fa-thermometer-full"
+                            aria-hidden="true"></i></strong></h3>
+            </div>
+            <div class="advanced-weather">
+                <!-- w JS wystarczyło by napisać np: $('#pressure').html('pressure: '+pressure+' [hPa]'); -->
+                <h4>pressure: <span id='pressure'>1021</span> [hPa]</h4>
+                <h4>humidity: <span id='humidity'>77</span> [%]</p>
+                    <h4>wind: <span id='wind'>11.3</span> [m/s]</h4>
+                    <h4>clouds: <span id='clouds'>75</span> [%]</h4>
+            </div>
+        </div>
+        <!-- The 3-days weather with chart box -->
+        <!-- ##### Tutaj chyba trzeba będzie poiterować po API z .html() ##### -->
+        <div class="additional-info">
+            <div class="three-days">
+                <!-- The 1st next day -->
+                <div class="next-day">
+                    <div class="next-day-basic-info">
+                        <h2>Monday</h2>
+                        <span>
+                            <i class="fas fa-sun" style="font-size: 4.5em;"></i>
+                        </span>
+                        <h3>
+                            <strong><span>21</span>&#176C <i class="fa fa-thermometer-full"
+                                    aria-hidden="true"></i></strong>
+                        </h3>
+                    </div>
+                    <div class="next-day-advanced-info">
+                        <h4>pressure: <span>1021</span> [hPa]</h4>
+                        <h4>humidity: <span>77</span> [%]</p>
+                            <h4>wind: <span>11.3</span> [m/s]</h4>
+                            <h4>clouds: <span>75</span> [%]</h4>
+                    </div>
+                </div>
+                <!-- The 2nd next day -->
+                <div class="next-day">
+                    <div class="next-day-basic-info">
+                        <h2>Tuesday</h2>
+                        <span>
+                            <i class="fas fa-sun" style="font-size: 4.5em;"></i>
+                        </span>
+                        <h3>
+                            <strong><span>25</span>&#176C <i class="fa fa-thermometer-full"
+                                    aria-hidden="true"></i></strong>
+                        </h3>
+                    </div>
+                    <div class="next-day-advanced-info">
+                        <h4>pressure: <span>1021</span> [hPa]</h4>
+                        <h4>humidity: <span>77</span> [%]</p>
+                            <h4>wind: <span>11.3</span> [m/s]</h4>
+                            <h4>clouds: <span>75</span> [%]</h4>
+                    </div>
+                </div>
+                <!-- The 3rd next day -->
+                <div class="next-day">
+                    <div class="next-day-basic-info">
+                        <h2>Wednesday</h2>
+                        <span>
+                            <i class="fas fa-sun" style="font-size: 4.5em;"></i>
+                        </span>
+                        <h3>
+                            <strong><span>29</span>&#176C <i class="fa fa-thermometer-full"
+                                    aria-hidden="true"></i></strong>
+                        </h3>
+                    </div>
+                    <div class="next-day-advanced-info">
+                        <h4>pressure: <span>1021</span> [hPa]</h4>
+                        <h4>humidity: <span>77</span> [%]</p>
+                      <h4>wind: <span>11.3</span> [m/s]</h4>
+                        <h4>clouds: <span>75</span> [%]</h4>
+                    </div>
+                </div>
+
+
+            </div>
+            <div id="chart-box">
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis explicabo possimus quam aliquid
+                    quaerat ut, deleniti ex amet corporis eveniet officiis consequatur dolor voluptas cupiditate
+                    provident harum neque facere doloribus?</br>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui, quisquam quis deleniti ad, minima
+                    saepe at voluptas aliquam quidem quaerat ex iusto labore? In nihil recusandae amet odit laboriosam
+                    harum?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel omnis odio nobis odit sequi
+                    nesciunt. Fugiat iure odit dignissimos, velit sequi impedit, aspernatur eius saepe laboriosam
+                    eligendi error quis.
+
+                    Miejsce na wykres
+                </p>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <footer>
+        <p>This weather-app was made with
+            <i class="fas fa-heart" style="color: #A52A2A"></i>,
+            <i class="fa fa-fw fa-coffee" style="color: #B5B5B5"></i> and
+            <i class="fa fa-fw fa-music" style="color: #BF8000"></i> by mangoteam | 2019
+        </p>
+    </footer>
 </body>
+
 </html>
