@@ -35,7 +35,7 @@ function weatherForecast(city) {
                     return 'Friday';
                 case 6:
                     return 'Saturday';
-                case 7:
+                case 0:
                     return 'Sunday';
             }
 
@@ -85,6 +85,7 @@ function weatherForecast(city) {
 
         displayInfo() {
             const dayBox = document.querySelector('.three-days');
+            while (dayBox.firstChild)   dayBox.removeChild(dayBox.firstChild);
             const day = document.createElement('div');
             day.classList.add('next-day');
 
