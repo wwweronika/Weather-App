@@ -85,7 +85,6 @@ function weatherForecast(city) {
 
         displayInfo() {
             const dayBox = document.querySelector('.three-days');
-            while (dayBox.firstChild)   dayBox.removeChild(dayBox.firstChild);
             const day = document.createElement('div');
             day.classList.add('next-day');
 
@@ -119,7 +118,9 @@ function weatherForecast(city) {
                 clouds = weatherData.list[8 * i].clouds.all;
                 days.push(new Day(date, time, temperature, humidity, wind, pressure, weather, clouds));
             }
-
+        
+            const dayBox = document.querySelector('.three-days');
+            while (dayBox.firstChild) dayBox.removeChild(dayBox.firstChild);
             days.forEach((e) => {
                 e.displayInfo();
             })
