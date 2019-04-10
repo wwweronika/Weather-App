@@ -1,5 +1,5 @@
-// currentWeather = require('./current.weather.js');
-// const weatherForecast = require('./fetchingWeatherData.js')
+// currentWeather = require('./currentweather.js');
+const weatherForecast = require('./weather-forecast.js')
 const charts = require('./charts.js');
 
 window.onload = function(){
@@ -18,10 +18,11 @@ function enterPressed(event) {
 async function showWeather() {
     const visibleOrNot = document.getElementById("visible-or-not");
     const cityName = document.getElementById("my-city").value;
-    // const today = await currentWeather.httpRequestAsync(apiLinkCity, apiResponse);
-    // const threeDays = await weatherForecast(cityName);// tu trzeba przeksztalcic
     visibleOrNot.style.display = "flex"; 
+    // const today = await currentWeather.httpRequestAsync(apiLinkCity, apiResponse);
+    const threeDays = await weatherForecast.weatherForecast(cityName);
     const chart = await charts.chart(cityName);
     visibleOrNot.scrollIntoView({behavior: "smooth"})
-    return chart
+    return threeDays, chart
+    
 } 

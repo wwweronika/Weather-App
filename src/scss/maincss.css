@@ -203,12 +203,14 @@ i.fas{
     text-align: center;
     font-size: .8rem;
 }
-#chart-box{
-    width: 90vw;
-    height: 40vh;
+.chart-box-container {
     text-align: justify;
     padding-top: 2.5%;
+    background-color: white;
 }
+
+
+
 /* ##### FOOTER ##### */
 footer {
     width: 100%;

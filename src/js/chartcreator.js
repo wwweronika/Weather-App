@@ -151,7 +151,8 @@ async function drawCharts(parsedData, tempFormat, tempName) {
                     display: true,
                     labelString: 'Time',
                     fontSize: 16,
-                    fontStyle: 'bold'
+                    fontStyle: 'bold',
+                    fontFamily: "Encode Sans Expanded"
                 },
                 ticks: { //size of units
                     fontSize: 10
@@ -174,7 +175,8 @@ async function drawCharts(parsedData, tempFormat, tempName) {
                         display: true,
                         labelString: 'degrees',
                         fontSize: 16,
-                        fonstyle: 'bold'
+                        fonstyle: 'bold',
+                        fontFamily: "Encode Sans Expanded"
                     },
                     ticks: {
                         fontSize: 10,
@@ -192,7 +194,8 @@ async function drawCharts(parsedData, tempFormat, tempName) {
                         display: true,
                         labelString: 'percents',
                         fontSize: 16,
-                        fonstyle: 'bold'
+                        fonstyle: 'bold',
+                        fontFamily: "Encode Sans Expanded"
                     },
                     ticks: {
                         fontSize: 10,
@@ -211,7 +214,8 @@ async function drawCharts(parsedData, tempFormat, tempName) {
                         display: true,
                         labelString: 'hPa',
                         fontSize: 16,
-                        fonstyle: 'bold'
+                        fonstyle: 'bold',
+                        fontFamily: "Encode Sans Expanded"
                     },
                     ticks: {
                         fontSize: 10,
@@ -230,7 +234,8 @@ async function drawCharts(parsedData, tempFormat, tempName) {
                         display: true,
                         labelString: 'm/s',
                         fontSize: 16,
-                        fonstyle: 'bold'
+                        fonstyle: 'bold',
+                        fontFamily: "Encode Sans Expanded"
                     },
                     ticks: {
                         fontSize: 10,
@@ -249,7 +254,8 @@ async function drawCharts(parsedData, tempFormat, tempName) {
                         display: true,
                         labelString: 'mm',
                         fontSize: 16,
-                        fonstyle: 'bold'
+                        fonstyle: 'bold',
+                        fontFamily: "Encode Sans Expanded"
                     },
                     ticks: {
                         fontSize: 10,
@@ -263,20 +269,21 @@ async function drawCharts(parsedData, tempFormat, tempName) {
         title: {
             display: true,
             text: "Weather for next 5 days",
-            fontSize: 20
+            fontSize: 24,
+            fontFamily: "Encode Sans Expanded"
         }
 
     };
     
     //console.log(options);
 
-    /* if (typeof myLineChart != 'undefined') {
+    if (typeof myLineChart != 'undefined') {
         console.log(myLineChart);
-        //myLineChart.destroy();
+        myLineChart.destroy();
         myLineChart = null;
         console.log('destroyed');
         console.log(myLineChart);
-    } */
+    } 
     
     const ctx = document.getElementById("chart-box").getContext("2d");
     myLineChart = new Chart(ctx, {
