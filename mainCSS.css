@@ -130,7 +130,7 @@ i.fas.fa-search{
 }
 /* ##### CLASSES and IDs - weather information for the current day ##### */
 #visible-or-not{
-    display: flex; /* display:flex; or display:none; */
+    display: none; /* display:flex; or display:none; */
     flex-wrap: wrap;
 }
 i.fas{
