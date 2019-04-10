@@ -203,7 +203,9 @@ i.fas{
     text-align: center;
     font-size: .8rem;
 }
-.chart-box{
+#chart-box{
+    width: 90vw;
+    height: 40vh;
     text-align: justify;
     padding-top: 2.5%;
 }
