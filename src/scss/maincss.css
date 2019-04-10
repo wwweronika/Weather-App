@@ -6,7 +6,7 @@ html{
 body{
     margin: 0;
     font-family: 'Encode Sans Expanded', sans-serif;
-    background: url("trianglify.svg");
+    background-image: url(../img/trianglify.svg);
     background-size: 2880px 3200px;
 }
 h1, h2{
