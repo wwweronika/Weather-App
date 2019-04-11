@@ -1,50 +1,69 @@
-module.exports.currentWeather = function(city) {
-// ---- API ---
-const apiKey = '3f849387b6ee8d313e4a17c268ffeceb';
-const apiLinkCity = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}`;
+function currentWeather(city) {
+    // ---- API ---
+    const key = '3f849387b6ee8d313e4a17c268ffeceb';
+    const query = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${key}`;
 
-// ---- INITIALIZE PROPERTIES VARIABLES ----
-let cityName = document.getElementById('location');
-let weatherIcon = document.getElementById('weather-icon');
-let temperature = document.getElementById('temp');
-let pressure = document.getElementById('pressure');
-let wind = document.getElementById('wind');
-let humidity = document.getElementById('humidity');
-let clouds = document.getElementById('clouds');
+    // ---- INITIALIZE PROPERTIES VARIABLES ----
+    const basicWeather = document.getElementById('basic-weather');
+    const pressure = document.getElementById('pressure');
+    const wind = document.getElementById('wind');
+    const humidity = document.getElementById('humidity');
+    const clouds = document.getElementById('clouds');
 
+    function matchWeatherInfoToIcon(weatherInfo) {
 
-const temperatureConverter = (value, conversionUnit) => {
-    switch (conversionUnit.toUpperCase()) {
-        case 'C':
-            return Math.round(value -= 273) ;
-            break;
-
-        case 'F':
-            return Math.round(value -= 457.87);
-            break;
+        switch (weatherInfo) {
+            case 'Clear':
+                return 'sun'
+            case 'Clouds':
+                return 'cloud'
+            case 'Thunderstorm':
+                return 'bolt'
+            case 'Rain':
+                return 'cloud-rain'
+            case 'Drizzle':
+                return 'cloud-rain'
+            case 'Snow':
+                return 'snowflake'
+            default:
+                return 'meteor'
+        }
     }
-}
 
-const apiResponse = (res) => {
-    let apiJsonObject = JSON.parse(res);
-    cityName.innerText = apiJsonObject.name;
-    weatherIcon.src = "http://openweathermap.org/img/w/" + apiJsonObject.weather[0].icon + ".png";
-    temperature.innerHTML = temperatureConverter(apiJsonObject.main.temp, 'C');
-    pressure.innerText = apiJsonObject.main.pressure;
-    wind.innerText = apiJsonObject.wind.speed;
-    humidity.innerText = apiJsonObject.main.humidity;
-    clouds.innerText = apiJsonObject.clouds.all;
-}
-
-const httpRequestAsync = (url, callback) => {
-    let httpRequest = new XMLHttpRequest();
-    httpRequest.onreadystatechange = () => {
-        if (httpRequest.readyState == 4 && httpRequest.status == 200)
-            callback(httpRequest.responseText);
+    function createBasicDayInfoHTML(object) {
+        return `                    
+            <h2>${object.name}</h2>
+            <span>
+                <i class="fas fa-${matchWeatherInfoToIcon(object.weather.main)}" style="font-size: 4.5em;"></i> 
+            </span>
+            <h3>
+                <strong><span>${Math.round(object.main.temp) - 273}</span>&#176C <i class="fa fa-thermometer-full"
+                        aria-hidden="true"></i></strong>
+            </h3>
+       `
     }
-    httpRequest.open("GET", url, true);
-    httpRequest.send();
-}
-httpRequestAsync(apiLinkCity, apiResponse);
 
-}
+    const response = (res) => {
+        let object = JSON.parse(res);
+        console.log(object);
+        basicWeather.innerHTML = createBasicDayInfoHTML(object);
+        pressure.innerText = object.main.pressure;
+        wind.innerText = object.wind.speed;
+        humidity.innerText = object.main.humidity;
+        clouds.innerText = object.clouds.all;
+    }
+
+    const httpRequestAsync = (url, callback) => {
+        let httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = () => {
+            if (httpRequest.readyState == 4 && httpRequest.status == 200)
+                callback(httpRequest.responseText);
+        }
+        httpRequest.open("GET", url, true);
+        httpRequest.send();
+    }
+    httpRequestAsync(query, response);
+
+};
+
+module.exports.currentWeather = currentWeather;
