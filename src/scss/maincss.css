@@ -2,11 +2,11 @@
 html{
     margin: 0;
     padding: 0;
-    height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 body{
-    margin: 0;
-    height: 100%;
+    margin: 0 0 30px;
     font-family: 'Encode Sans Expanded', sans-serif;
     background-image: url(../img/trianglify.svg);
     background-size: 2880px 3200px;
@@ -214,21 +214,16 @@ i.fas{
     background-color: white;
     width: 100%;
     height: 400px;
-    background: rgba(146, 230, 254, 0.7);
 }
 
 
 /* ##### FOOTER ##### */
-#main{
-    min-height: 100%;
-    position: relative;
-}
 footer {
     width: 100%;
+    height: 30px;
     background-color: rgba(52, 58, 64, 0.7);
     color: white;
     text-align: center;
-    padding: 1% 0;
     position: absolute;
     bottom: 0;
 }
