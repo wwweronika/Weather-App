@@ -1,4 +1,3 @@
-//import Chart from 'chart.js';
 const Chart = require('chart.js');
 
 async function drawCharts(parsedData, tempFormat, tempName) {
@@ -6,18 +5,14 @@ async function drawCharts(parsedData, tempFormat, tempName) {
         labels: parsedData.date,
         datasets: [{
                 label: `Temperature ${tempName}`,
-                // line properties
                 borderColor: 'rgba(236, 115, 87, 0.7)',
                 pointBorderColor: 'rgba(236, 115, 87, 0.7)',
                 borderWidth: 2,
-                // legend series properties
                 fill: false,
                 backgroundColor: 'rgba(236, 115, 87, 0.1)',
-                // point properties
                 pointRadius: 4,
                 pointBorderWidth: 1,
                 pointBackgroundColor: 'rgba(255, 255, 255, 1)',
-                // hover point settings
                 pointHoverRadius: 4,
                 pointHoverBorderWidth: 3,
                 pointHoverBackgroundColor: 'rgba(255, 255, 255, 1)',
@@ -28,8 +23,8 @@ async function drawCharts(parsedData, tempFormat, tempName) {
             },
             {
                 label: "Humidity",
-                borderColor: 'rgba(132, 177, 237, 0.7)',
-                pointBorderColor: 'rgba(132, 177, 237, 0.7)',
+                borderColor: 'rgba(62, 108, 230, 0.9)',
+                pointBorderColor: 'rgba(62, 108, 230, 0.7)',
                 borderWidth: 2,
                 fill: false,
                 backgroundColor: 'rgba(236, 115, 87, 0.1)',
@@ -39,7 +34,7 @@ async function drawCharts(parsedData, tempFormat, tempName) {
                 pointHoverRadius: 4,
                 pointHoverBorderWidth: 3,
                 pointHoverBackgroundColor: 'rgba(255, 255, 255, 1)',
-                pointHoverBorderColor: 'rgba(132, 177, 237, 1)',
+                pointHoverBorderColor: 'rgba(62, 108, 230, 1)',
                 data: parsedData.humidity,
                 yAxisID: "yPercent",
                 type: 'line'
@@ -83,7 +78,6 @@ async function drawCharts(parsedData, tempFormat, tempName) {
             {
                 label: "Clouds",
                 borderColor: 'rgba(170,170,170,0.7)',
-                //fillColor: 'rgba(170,170,170,0.3)',
                 pointBorderColor: 'rgba(170,170,170,0.5)',
                 borderWidth: 2,
                 fill: true,
@@ -101,7 +95,6 @@ async function drawCharts(parsedData, tempFormat, tempName) {
             {
                 label: "Rain",
                 borderColor: 'rgba(92, 139, 188, 0.7)',
-                //fillColor: 'rgba(170,170,170,0.3)',
                 pointBorderColor: 'rgba(92, 139, 188, 0.5)',
                 borderWidth: 2,
                 fill: true,
@@ -118,8 +111,6 @@ async function drawCharts(parsedData, tempFormat, tempName) {
             }
         ]
     };
-    //console.log(data.datasets);
-
     let options = {
         animation: {
             easing: "easeOutCubic",
@@ -134,9 +125,6 @@ async function drawCharts(parsedData, tempFormat, tempName) {
         tooltips: {
             enabled: true
         },
-        /* hover: {
-            mode: 'dataset'
-        }, */
         scales: {
             xAxes: [{
                 gridLines: {
@@ -146,15 +134,16 @@ async function drawCharts(parsedData, tempFormat, tempName) {
                     lineWidth: 1,
                     drawOnChartArea: true
                 },
-                display: true, //bottom units description
+                display: true,
                 scaleLabel: {
                     display: true,
                     labelString: 'Time',
                     fontSize: 16,
+                    fontColor: 'black',
                     fontStyle: 'bold',
                     fontFamily: "Encode Sans Expanded"
                 },
-                ticks: { //size of units
+                ticks: { 
                     fontSize: 10
                 },
                 labelFormatter: (e) => {
@@ -163,11 +152,7 @@ async function drawCharts(parsedData, tempFormat, tempName) {
             }],
             yAxes: [{
                     gridLines: {
-                        /*  zeroLineWidth: 1,
-                         zeroLineColor: 'rgba (0, 0, 0, 0.3)',
-                         color: 'rgba(0, 0, 0, 0.05)',
-                         lineWidth: 1, */
-                        drawOnChartArea: false
+                       drawOnChartArea: false
                     },
                     display: true,
                     position: 'left',
@@ -175,6 +160,7 @@ async function drawCharts(parsedData, tempFormat, tempName) {
                         display: true,
                         labelString: 'degrees',
                         fontSize: 16,
+                        fontColor: 'black',
                         fonstyle: 'bold',
                         fontFamily: "Encode Sans Expanded"
                     },
@@ -194,6 +180,7 @@ async function drawCharts(parsedData, tempFormat, tempName) {
                         display: true,
                         labelString: 'percents',
                         fontSize: 16,
+                        fontColor: 'black',
                         fonstyle: 'bold',
                         fontFamily: "Encode Sans Expanded"
                     },
@@ -214,6 +201,7 @@ async function drawCharts(parsedData, tempFormat, tempName) {
                         display: true,
                         labelString: 'hPa',
                         fontSize: 16,
+                        fontColor: 'black',
                         fonstyle: 'bold',
                         fontFamily: "Encode Sans Expanded"
                     },
@@ -234,6 +222,7 @@ async function drawCharts(parsedData, tempFormat, tempName) {
                         display: true,
                         labelString: 'm/s',
                         fontSize: 16,
+                        fontColor: 'black',
                         fonstyle: 'bold',
                         fontFamily: "Encode Sans Expanded"
                     },
@@ -254,6 +243,7 @@ async function drawCharts(parsedData, tempFormat, tempName) {
                         display: true,
                         labelString: 'mm',
                         fontSize: 16,
+                        fontColor: 'black',
                         fonstyle: 'bold',
                         fontFamily: "Encode Sans Expanded"
                     },
@@ -270,13 +260,13 @@ async function drawCharts(parsedData, tempFormat, tempName) {
             display: true,
             text: "Weather for next 5 days",
             fontSize: 24,
-            fontFamily: "Encode Sans Expanded"
+            fontFamily: "Encode Sans Expanded",
+            fontColor: 'black',
         }
 
     };
     
-    //console.log(options);
-
+  
     if (typeof myLineChart != 'undefined') {
         console.log(myLineChart);
         myLineChart.destroy();
@@ -291,7 +281,6 @@ async function drawCharts(parsedData, tempFormat, tempName) {
         data: data,
         options: options
     });
-    //console.log(myLineChart);
 
     return myLineChart;
 }
