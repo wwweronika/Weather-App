@@ -15,14 +15,25 @@ function enterPressed(event) {
     }
 }
 
-async function showWeather() {
+async function fetchstatus(cityInput) {
+    const city = cityInput;
+    console.log('fetch started');
+    const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=c933a83cb569298458c0ad0176ec7f99`);
+    const data = await response.json();
+    return data.cod
+ }
+
+ async function showWeather() {
     const visibleOrNot = document.getElementById("visible-or-not");
     const cityName = document.getElementById("my-city").value;
-    visibleOrNot.style.display = "flex"; 
+    const status = await fetchstatus(cityName);
+    if (status != 200) {alert('Check if you correctly entered the name of the city.')}
+    else
+    {visibleOrNot.style.display = "flex"; 
+    visibleOrNot.scrollIntoView({behavior: "smooth"})
     const today = await currentWeather.currentWeather(cityName);
     const threeDays = await weatherForecast.weatherForecast(cityName);
     const chart = await charts.chart(cityName);
-    visibleOrNot.scrollIntoView({behavior: "smooth"})
-    return threeDays, chart
-    
+
+    return today,threeDays, chart}  
 } 
