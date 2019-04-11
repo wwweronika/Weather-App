@@ -212,6 +212,7 @@ i.fas{
     background-color: white;
     width: 100%;
     height: 400px;
+    background: rgba(146, 230, 254, 0.7);
 }
 
 
@@ -222,6 +223,8 @@ footer {
     color: white;
     text-align: center;
     padding: 1% 0;
+    position: relative;
+    bottom: 0;
 }
 footer p {
     margin-bottom: 0;
