@@ -1,4 +1,4 @@
-// currentWeather = require('./currentweather.js');
+const currentWeather = require('./currentWeather.js');
 const weatherForecast = require('./weather-forecast.js')
 const charts = require('./charts.js');
 
@@ -19,7 +19,7 @@ async function showWeather() {
     const visibleOrNot = document.getElementById("visible-or-not");
     const cityName = document.getElementById("my-city").value;
     visibleOrNot.style.display = "flex"; 
-    // const today = await currentWeather.httpRequestAsync(apiLinkCity, apiResponse);
+    const today = await currentWeather.currentWeather(cityName);
     const threeDays = await weatherForecast.weatherForecast(cityName);
     const chart = await charts.chart(cityName);
     visibleOrNot.scrollIntoView({behavior: "smooth"})
